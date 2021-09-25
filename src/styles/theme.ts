@@ -42,5 +42,6 @@ export const theme = {
 type AppTheme = typeof theme;
 
 declare module 'styled-components' {
-  type DefaultTheme = AppTheme;
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface DefaultTheme extends AppTheme {}
 }
