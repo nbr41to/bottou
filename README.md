@@ -1,8 +1,6 @@
-# Next.js Template
+# Bottou
 
-```sh
-yarn create next-app [PJ_NAME] -e "https://github.com/nbr41to/template-next"
-```
+没頭して強くなれるアプリ
 
 ## Installation
 

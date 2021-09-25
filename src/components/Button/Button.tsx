@@ -69,7 +69,8 @@ const StyledButton = styled.button<{ contain: boolean }>`
       ? css`
           color: #fff;
           background: #343434 0% 0% no-repeat padding-box;
-          &:hover {
+          &:hover,
+          &:active {
             color: #343434;
             background: #fff 0% 0% no-repeat padding-box;
             border: 1px solid #343434;
@@ -79,7 +80,8 @@ const StyledButton = styled.button<{ contain: boolean }>`
       : css`
           color: #343434;
           border: 1px solid #343434;
-          &:hover {
+          &:hover,
+          &:active {
             color: #fff;
             background: #343434 0% 0% no-repeat padding-box;
             transition: 0.3s;

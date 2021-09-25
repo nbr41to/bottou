@@ -11,7 +11,7 @@ export const Layout: VFC<LayoutProps> = ({ className, children }) => {
   return (
     <StyledLayout className={`${className}`}>
       <header>
-        <h1>Bottou</h1>
+        <h1>Bottou🧘‍♀️</h1>
       </header>
       <main>{children}</main>
       <footer>
@@ -24,4 +24,7 @@ export const Layout: VFC<LayoutProps> = ({ className, children }) => {
 const StyledLayout = styled.div`
   height: 100vh;
   background-color: peachpuff;
+  main {
+    height: 1200px;
+  }
 `;
