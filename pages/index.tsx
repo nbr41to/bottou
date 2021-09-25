@@ -1,11 +1,13 @@
+import { NextPage } from 'next';
+
 import { Button } from '@/components/Button';
 
-const Home = () => {
+const HomePage: NextPage = () => {
   return (
-    <div>
+    <>
       <Button label="button" />
-    </div>
+    </>
   );
 };
 
-export default Home;
+export default HomePage;
