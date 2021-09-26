@@ -45,7 +45,6 @@ export const BottouNow: VFC<BottouNowProps> = ({ className }) => {
           {hours}時間 {minutes}分 {seconds}秒 経過
         </div>
 
-        <Button label="報酬を受取る" onClick={getReword} />
         {(content.type === '5minutes' && minutes >= 5) ||
         (content.type === '25minutes' && minutes >= 25) ||
         (content.type === '1hour' && hours >= 1) ? (

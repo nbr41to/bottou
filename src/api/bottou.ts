@@ -65,7 +65,7 @@ export const achievedBottou = async (params: {
     /* UserのBottou状態を更新 */
     transaction.update(doc(collection(db, 'users'), userId), {
       bottou_status: '',
-      bottou_point: user.bottou_points + reward,
+      bottou_points: user.bottou_points + reward,
     });
 
     /* BottouをClosedに */
