@@ -15,7 +15,7 @@ export const Layout: VFC<LayoutProps> = ({ className, children }) => {
       <Header className="header" />
       <main className="main">{children}</main>
       <footer className="footer">
-        <small>copyright &copy; 2021 progL</small>
+        <small>&copy; 2021 progL</small>
       </footer>
     </StyledLayout>
   );

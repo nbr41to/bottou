@@ -13,6 +13,7 @@ export const useAuth = () => {
   useEffect(() => {
     /* 初期化処理を終えて,露軍していなかった場合はログインページへ */
     if (authState.initialized && !authState.isLoggedIn) router.push('/login');
+    if (authState.initialized) return;
 
     /* ログイン状態の確認と監視 */
     const auth = getAuth();
@@ -28,13 +29,14 @@ export const useAuth = () => {
     return () => {
       unsubscribe();
     };
-  }, []);
+  }, [authState]);
 
   const user = useRecoilValueLoadable(user_state);
   useEffect(() => {
-    if (user.state === 'hasValue' && user.contents?.bottou_status) {
-      router.push('/bottou/now');
-    }
+    if (user.state !== 'hasValue') return;
+    if (!user.contents?.bottou_status) return;
+
+    router.push('/bottou/now');
   }, [user]);
 
   return authState;

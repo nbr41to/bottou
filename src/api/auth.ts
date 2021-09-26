@@ -15,7 +15,7 @@ export const googleLogin = async (): Promise<void> => {
     const user = result.user;
     createUser({ id: user.uid, name: user.displayName });
   } catch (error) {
-    console.error(error);
+    throw new Error(error);
   }
 };
 
