@@ -12,7 +12,7 @@ export const theme = {
   fonts: {},
   colors: {},
   mixins: {
-    toCenter: (): FlattenSimpleInterpolation =>
+    flexCenter: (): FlattenSimpleInterpolation =>
       css`
         display: flex;
         align-items: center;
@@ -24,7 +24,13 @@ export const theme = {
         margin: 12px;
         border: 1px solid #444;
         border-radius: 4px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      `,
+    neumorphism: (): FlattenSimpleInterpolation =>
+      css`
+        background-color: #8cc7f6;
+        border-radius: 8px;
+        box-shadow: -8px -8px 16px 0 #b9dcf9, 8px 8px 16px 0 #5eb0f2;
       `,
   },
   media: {

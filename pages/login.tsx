@@ -1,9 +1,11 @@
 import { NextPage } from 'next';
 
+import { Login } from '@/components/page/Login';
+
 const LoginPage: NextPage = () => {
   return (
     <>
-      <h1>Login and Sing up</h1>
+      <Login />
     </>
   );
 };

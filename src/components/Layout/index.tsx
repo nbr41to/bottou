@@ -24,19 +24,19 @@ export const Layout: VFC<LayoutProps> = ({ className, children }) => {
 const StyledLayout = styled.div`
   display: grid;
   grid-template:
-    'header header header' 1fr
+    'header header header' min-content
     'main main main' 1fr
-    'footer footer footer' 1fr
+    'footer footer footer' min-content
     / 1fr;
-  height: 100vh;
-  background-color: peachpuff;
-
+  max-width: 480px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: #c1e1e1;
   .header {
     grid-area: header;
   }
   .main {
     grid-area: main;
-    height: 1200px;
   }
   .footer {
     grid-area: footer;

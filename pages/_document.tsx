@@ -42,7 +42,16 @@ export default class MyDocument extends Document {
   render(): JSX.Element {
     return (
       <Html lang="ja">
-        <Head></Head>
+        <Head>
+          <meta
+            name="viewport-extra"
+            content="width=device-width,initial-scale=1,min-width=375"
+          />
+          <script
+            src="https://cdn.jsdelivr.net/npm/viewport-extra@2.1.1/dist/iife/viewport-extra.min.js"
+            async
+          ></script>
+        </Head>
         <body>
           <Main />
           <NextScript />

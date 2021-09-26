@@ -14,6 +14,7 @@ export const Header: VFC<HeaderProps> = ({ className }) => {
 };
 
 const StyledHeader = styled.header`
+  padding: 16px 0 16px 16px;
   text-align: center;
   h1 {
     font-size: 2.5rem;

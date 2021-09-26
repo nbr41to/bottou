@@ -1,10 +1,11 @@
 import { NextPage } from 'next';
 
+import { BottouAchieved } from '../../src/components/page/Bottou/BottouAchieved';
+
 const AchievedBottouPage: NextPage = () => {
   return (
     <>
-      <h1>Achieved Bottou</h1>
-      <p>Congratulations!!</p>
+      <BottouAchieved />
     </>
   );
 };

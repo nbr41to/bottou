@@ -10,7 +10,7 @@ type InputDateFormatProps = {
  * @returns type: string
  */
 export const dateFormatted = (input?: InputDateFormatProps): string => {
-  const { date = new Date(), format = 'YYYY/MM/DD hh:mm' } = input;
+  const { date = new Date(), format = 'YYYY/MM/DD hh:mm' } = input || {};
   let _format = format;
   _format = _format.replace(/YYYY/, date.getFullYear().toString());
   _format = _format.replace(/MM/, ('0' + (date.getMonth() + 1)).slice(-2));
