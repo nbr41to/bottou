@@ -13,6 +13,5 @@ export const ButtonComponent: ComponentStory<typeof Button> = (args) => (
 );
 
 ButtonComponent.args = {
-  contain: true,
   label: 'Button',
 };

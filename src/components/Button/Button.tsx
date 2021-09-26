@@ -4,87 +4,33 @@ import styled, { css } from 'styled-components';
 interface ButtonProps {
   className?: string;
   label: string;
-  contain?: boolean;
-  type?: string;
   onClick?: () => void;
 }
 
-export const Button: VFC<ButtonProps> = ({
-  label,
-  contain = false,
-  onClick,
-}) => {
-  return (
-    <StyledButton contain={contain} onClick={onClick}>
-      {label}
-    </StyledButton>
-  );
+export const Button: VFC<ButtonProps> = ({ label, onClick }) => {
+  return <StyledButton onClick={onClick}>{label}</StyledButton>;
 };
 
-const StyledButton = styled.button<{ contain: boolean }>`
-  position: relative;
+const StyledButton = styled.button`
+  ${({ theme }) => theme.mixins.flexCenter};
+
+  min-width: 240px;
+  padding: 20px 24px;
   overflow: hidden;
-  font: normal normal normal 16px/1.5em 'Roboto', sans-serif;
+  font: normal normal normal 18px/1.5em 'Roboto', sans-serif;
   letter-spacing: 4px;
   cursor: pointer;
+  background-color: #c1e1e1;
+  border-radius: 8px;
+  box-shadow: -4px -4px 12px 0 #eff, 4px 4px 12px 0 #688;
+  transition: all 0.2s ease-in-out;
 
-  ${({ theme }) => theme.mixins.box};
-  ${({ theme }) => theme.mixins.toCenter};
+  /* &:hover {
+    box-shadow: -2px -2px 6px 0 #eff, 2px 2px 6px 0 #688;
+  } */
 
-  &::before {
-    position: absolute;
-    inset: 0;
-    width: 4px;
-    height: 4px;
-    margin: auto;
-    content: '';
-    border-radius: 50%;
-    @keyframes spared {
-      0% {
-        transform: scale(0.3);
-      }
-
-      50% {
-        background: red;
-      }
-
-      100% {
-        width: 120px;
-        height: 120px;
-        background-color: #0006;
-      }
-    }
-  }
   &:active {
-    &::before {
-      width: 120px;
-      height: 120px;
-      background-color: #0006;
-      animation: spared 1s;
-    }
+    box-shadow: -1px -1px 4px 0 #eff, 1px 1px 4px 0 #688;
+    transform: scale(0.99);
   }
-
-  ${({ contain }) =>
-    contain
-      ? css`
-          color: #fff;
-          background: #343434 0% 0% no-repeat padding-box;
-          &:hover,
-          &:active {
-            color: #343434;
-            background: #fff 0% 0% no-repeat padding-box;
-            border: 1px solid #343434;
-            transition: 0.3s;
-          }
-        `
-      : css`
-          color: #343434;
-          border: 1px solid #343434;
-          &:hover,
-          &:active {
-            color: #fff;
-            background: #343434 0% 0% no-repeat padding-box;
-            transition: 0.3s;
-          }
-        `};
 `;

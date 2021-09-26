@@ -1,11 +1,13 @@
 import { NextPage } from 'next';
+import { useAuth } from 'src/recoil/user/hook';
 
-import { Button } from '@/components/Button';
+import { Home } from '@/components/page/Home';
 
 const HomePage: NextPage = () => {
+  useAuth();
   return (
     <>
-      <Button label="button" />
+      <Home />
     </>
   );
 };
