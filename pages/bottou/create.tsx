@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 
-import { CreateBottou } from '@/components/Bottou/CreateBottou';
+import { CreateBottou } from '@/components/page/Bottou/CreateBottou';
 
 const CreateBottouPage: NextPage = () => {
   return (
