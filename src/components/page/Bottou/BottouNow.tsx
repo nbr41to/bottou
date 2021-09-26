@@ -15,6 +15,8 @@ export const BottouNow: VFC<BottouNowProps> = ({ className }) => {
   const router = useRouter();
   const bottou = useRecoilValueLoadable(current_bottou);
 
+  if (bottou.state === 'loading')
+    return <StyledBottouNow>...loading</StyledBottouNow>;
   if (bottou.state === 'hasValue' && bottou.contents) {
     const content = bottou.contents;
     /* TODO)関数に取り出す */
@@ -54,9 +56,10 @@ export const BottouNow: VFC<BottouNowProps> = ({ className }) => {
         )}
       </StyledBottouNow>
     );
+  } else {
+    router.push('/');
   }
-  if (bottou.state === 'hasValue' && !bottou.contents) router.push('/');
-  return <StyledBottouNow>...loading</StyledBottouNow>;
+  return <></>;
 };
 
 const StyledBottouNow = styled.div`
