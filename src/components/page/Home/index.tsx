@@ -18,13 +18,7 @@ export const Home: VFC<HomeProps> = ({ className }) => {
     <StyledHome className={`${className}`}>
       <Button label="Bottouする" onClick={() => router.push('/bottou/list')} />
       <div className="current_points">
-        現在{' '}
-        {user.state === 'hasValue'
-          ? user.contents?.bottou_points
-            ? user.contents?.bottou_points
-            : '🧘‍♀️'
-          : '🧘‍♀️'}{' '}
-        BP
+        現在 {user.state === 'hasValue' && user.contents?.bottou_points} BP
       </div>
     </StyledHome>
   );

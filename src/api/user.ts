@@ -13,6 +13,10 @@ export const createUser = async (params: {
   try {
     const { id, name = '' } = params;
     const db = getFirestore();
+    /* 既存かどうかチェック */
+    const user = await getUser({ id });
+    if (user) return;
+    /* 新規ユーザー情報の作成 */
     const initialUser: User = {
       id,
       name,
@@ -32,7 +36,6 @@ export const getUser = async (params: { id: string }): Promise<User> => {
     const db = getFirestore();
     const result = await getDoc(doc(db, `users/${id}`));
     const user = result.data() as User;
-    if (!user) throw new Error('getUser: User not found!!');
     return user;
   } catch (error) {
     throw new Error(error);
